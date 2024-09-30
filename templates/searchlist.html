@@ -1,0 +1,47 @@
+<html>    
+    <head>    
+        <title>{{t}}</title>    
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >    
+    </head>    
+<body>    
+    <h1><center>{{ h }}</center></h1>    
+    <hr>    
+        {% if todos[0] %}    
+    <h3>Result of the Search : Patient List</h3>    
+    <table>    
+        <tr id="row">    
+            <th class="pat_id">Patient ID</th>    
+            <th class="name">Patient Name</th>    
+            <th class="age">Age</th>    
+            <th class="address">Address</th>    
+            <th class="admission_date">Date Of Admission</th>
+            <th class="discharge_date">Date Of Discharge</th>   
+            <th class="room_no">Room Number</th>   
+            <th class="Dr_referred">Doctor Referred</th>   
+            <th class="medicine">Medicines Prescribed</th> 
+            <th class="fees">Fees Collected</th>     
+        <th class="func2">Modify</th>    
+        </tr>    
+    {% for todo in todos %}    
+        <tr class="datas">    
+            <td class="pat_id">{{ todo["pat_id"] }}</td>    
+            <td class="name">{{ todo["name"] }}</td>    
+            <td class="age">{{ todo["age"] }}</td>    
+            <td class="address">{{ todo["address"] }}</td>    
+            <td class="admission_date">{{ todo["admission_date"] }}</td>
+            <td class="discharge_date">{{ todo["discharge_date"] }}</td>  
+            <td class="room_no">{{ todo["room_no"] }}</td>  
+            <td class="Dr_referred">{{ todo["Dr_referred"] }}</td>  
+            <td class="medicine">{{ todo["medicine"] }}</td>  
+            <td class="fees">{{ todo["fees"] }}</td>  
+            <td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDIT</button></a></td>    
+        </tr>    
+    {% endfor %}    
+    </table>    
+    {% else %}    
+    <h4>No Patient Details!!</h4>    
+    {% endif %}    
+    <hr/>     
+   <a href="/">Return to HomePage</a>    
+</body>    
+</html>  

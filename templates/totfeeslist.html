@@ -1,0 +1,26 @@
+<html>    
+    <head>    
+        <title>{{t}}</title>    
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >    
+    </head>    
+<body>    
+    <h1><center>{{h}}</center></h1>    
+    <hr>    
+           
+    <h3>Result of the Search : Patient List</h3>    
+    <table>    
+        <tr id="row">    
+            <th class="Dr_referred">Doctors and their Fees</th>       
+        </tr>    
+    {% for todo in todos %}    
+        <tr class="datas">    
+            <td class="Dr_referred">{{ todo }}</td>  
+            <!--<td class="fees">{{ todo["TotFees"] }}</td> --> 
+        </tr>    
+    {% endfor %}    
+    </table>    
+      
+    <hr/>     
+   <a href="/">Return to HomePage</a>    
+</body>    
+</html>  

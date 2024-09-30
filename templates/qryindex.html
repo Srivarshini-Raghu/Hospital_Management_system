@@ -1,0 +1,97 @@
+<html>    
+    <head>    
+        <title>{{t}}</title>    
+        <!-- href="/static/assets/style.css"-->    
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >    
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/emoji.css')}}" >    
+        <script src="{{ url_for('static',filename='assets/twemoji.min.js')}}"></script>      
+        <script src="{{ url_for('static',filename='assets/emoji.js')}}"></script>    
+    </head>    
+<body>    
+    <h1><center>{{ h }}</center></h1>    
+    <ul>    
+        <li><a href="/patients" class="{{ a1 }}">Patients</a></li>    
+        <li><a href="/doctors" class="{{ a2 }}">Doctors</a></li>    
+        <li><a href="/queries" class="{{ a3 }}">Enquiries</a></li>    
+    </ul>  
+          
+    <hr>    
+      
+    <div span="right">    
+     
+    <form action="/namestartaction" method="POST">    
+        <table class="none">    
+                <tr>  
+                <td><big><b>Patients Name contains</b></big></td><td><input type="text" name="nmst" placeholder="Enter letter" /></td>  <td><button type="submit">Get Details</button></td> 
+                </tr>      
+        </table>    
+    </form>   
+    <form action="/ageaftaction" method="POST">    
+        <table class="none">    
+            <tr>    
+            <td><big><b>Patients with age more than</b></big></td><td><input type="text" name="ageaft" placeholder="Enter Age" ></td> <td><button type="submit">Get Details</button></td>
+            </tr>
+        </table>
+    </form> 
+    <form action="/admdaysaction" method="POST">    
+        <table class="none">    
+            <tr>         
+            <td><big><b>Patients Referred By Doctors</b></big></td><td><input type="text" name="admdays" placeholder="Enter Doctor names" /></td>  <td><button type="submit">Get Details</button></td>  
+            </tr>
+        </table>
+    </form>
+    <form action="/cityaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Patients from City</b></big></td><td><input type="text" name="city" placeholder="Enter City name" /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>   
+    <form action="/mediaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Patients prescribed medicines</b></big></td><td><input type="text" name="medi" placeholder="Enter Medicine name" /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>   
+     
+    <form action="/specializeaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Doctor Specialized in </b></big></td><td><input type="text" name="specialize" placeholder="Enter Qualification Name" /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>
+     
+    <form action="/patfeesaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Patient who paid highest fees</b></big></td><td></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>  
+    <form action="/totfeesaction" method="GET">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Total Fees collected by Doctor</b></big></td><td><input type="text" name="totfees" placeholder="Enter Doctor Name " /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>    
+    <form action="/maxfeesaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Maximum Fees collected by Doctor</b></big></td><td><input type="text" name="maxfees" placeholder="Enter Doctor Name " /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>    
+    <form action="/minfeesaction" method="POST">    
+        <table class="none">    
+            <tr>  
+            <td><big><b>Minimum Fees collected by Doctor</b></big></td><td><input type="text" name="minfees" placeholder="Enter Doctor Name " /></td>  <td><button type="submit">Get Details</button></td> 
+            </tr>      
+        </table>    
+    </form>        
+    </div>    
+      
+</body>    
+</html>   

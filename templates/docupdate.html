@@ -1,0 +1,39 @@
+<html>    
+   <head>    
+            <title>{{t}}</title>    
+        </head>    
+        <style>       
+            h1{    
+                font-family:"Arial Black", Gadget, sans-serif;    
+            }    
+            body{    
+                background-color:rgb(226, 250, 216);    
+            }    
+        </style>    
+    <body>    
+        <h1>{{h}}</h1>    
+        <hr>    
+        <h3>Update tasks with a reference</h3>    
+        <form action="/action4" method="POST">    
+        {% for task in tasks %}    
+            Unique Object ID : {{ task['_id'] }}<br/>    
+        <input type="text" name="_id" value="{{ task['_id'] }}" hidden>    
+        
+        <table>    
+        <tr>    
+        <td>Doctor Name</td><td>    : </td><td><input type="text" name="name" value="{{ task['name'] }}" placeholder="{{ task['name'] }}"></td>    
+        </tr>
+        <tr>    
+        <td>Specialization</td><td> : </td><td><input type="text" name="specialization" value="{{ task['specialization'] }}" placeholder="{{ task['specialization'] }}"></td>    
+        </tr>
+        <tr>    
+        <td>Joining Date</td><td>   : </td><td><input type="text" name="date_of_joining" value="{{ task['date_of_joining'] }}" placeholder="{{ task['date_of_joining'] }}"></td>    
+        </tr> 
+        </table>    
+        {% endfor %}    
+            <button type="submit"> Update Details </button>    
+            <br/>    
+        </form>    
+        <a href="/d">Return to HomePage</a>    
+</body>    
+</html>   

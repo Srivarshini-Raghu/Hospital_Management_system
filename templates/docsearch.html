@@ -1,0 +1,33 @@
+<html>    
+    <head>    
+        <title>{{t}}</title>    
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >    
+    </head>    
+<body>    
+    <h1><center>{{h}}</center></h1>    
+    <hr>    
+        {% if todos[0] %}    
+    <h3>Result of the Search : Doctor List</h3>    
+    <table>    
+        <tr id="row">    
+            <th class="name">Doctor Name</th>    
+            <th class="specialization">Specialization</th>    
+            <th class="date_of_joining">Joining Date</th>
+        <th class="func2">Modify</th>    
+        </tr>    
+    {% for todo in todos %}    
+        <tr class="datas">    
+            <td class="name">{{ todo["name"] }}</td>    
+            <td class="specialization">{{ todo["specialization"] }}</td>    
+            <td class="date_of_joining">{{ todo["date_of_joining"] }}</td>
+            <td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDIT</button></a></td>    
+        </tr>    
+    {% endfor %}    
+    </table>    
+    {% else %}    
+    <h4>No Doctor Details!!</h4>    
+    {% endif %}    
+    <hr/>     
+   <a href="/d">Return to HomePage</a>    
+</body>    
+</html>  
