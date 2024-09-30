@@ -20,13 +20,19 @@ Conduct complex data searches using MongoDB queries and aggregation pipelines.
 Quickly retrieve patient and doctor records based on various search criteria, enhancing the decision-making process for healthcare professionals.
 
 Technologies Used
+
 Backend:
+
 Python (Flask framework)
 
 Database:
+
 MongoDB
 
 Frontend:
+
 HTML
+
 CSS (Bootstrap for styling)
+
 JavaScript (for interactivity)
